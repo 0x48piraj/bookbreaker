@@ -130,7 +130,7 @@ if __name__ == "__main__":
     stats = Stats()
     by_epd: Dict[str, List[str]] = {}
     shortest_by_name: Dict[str, int] = {}
-    for file_name in sys.argv[1:]:
+    for file_name in sorted(sys.argv[1:]):
         with open(file_name) as f:
             main(f, Reporter(stats, file_name), by_epd, shortest_by_name)
     if stats.errors:
